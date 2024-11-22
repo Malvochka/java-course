@@ -1,0 +1,15 @@
+Пример перегрузки оператора + с объектами типа String и переменными других типов:
+
+public class StringConcatenationExample {
+    public static void main(String[] args) {
+        int num = 5;
+        String str = "Hello";
+        
+        // Перегрузка оператора "+" для объектов и типов
+        String result = str + num;  // Сначала преобразуется num в строку и происходит конкатенация
+        System.out.println(result);  // Выведет "Hello5"
+    }
+}
+
+Объяснение:
+Оператор + для строк в Java — это операция конкатенации. В данном случае num преобразуется в строку и происходит соединение со строкой "Hello".
