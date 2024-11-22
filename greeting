@@ -1,0 +1,19 @@
+package org.example;
+import java.util.Scanner;
+
+public class GreetingProgram {
+    public static void main(String[] args) {
+        // объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // просим пользователя ввести имя
+        System.out.print("Введите ваше имя: ");
+        String name = scanner.nextLine(); // Читаем строку, введенную пользователем
+
+        // выводим приветственное сообщение
+        System.out.println("Привет, " + name + "!");
+
+        // Закрываем Scanner 
+        scanner.close();
+    }
+}
