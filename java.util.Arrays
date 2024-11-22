@@ -1,0 +1,36 @@
+Класс java.util.Arrays предоставляет утилитарные методы для работы с массивами. Вот пример использования нескольких методов.
+
+Код:
+import java.util.Arrays;
+
+public class ArrayMethodsExample {
+    public static void main(String[] args) {
+        // Исходный массив
+        int[] numbers = {5, 2, 9, 1, 3};
+
+        // toString: преобразование массива в строку
+        System.out.println("Массив: " + Arrays.toString(numbers));
+
+        // sort: сортировка массива
+        Arrays.sort(numbers);
+        System.out.println("Отсортированный массив: " + Arrays.toString(numbers));
+
+        // binarySearch: поиск элемента в отсортированном массиве
+        int index = Arrays.binarySearch(numbers, 9);
+        System.out.println("Индекс элемента 9: " + index);
+
+        // equals: сравнение массивов
+        int[] numbersCopy = {1, 2, 3, 5, 9};
+        System.out.println("Массивы равны: " + Arrays.equals(numbers, numbersCopy));
+
+        // compare: лексикографическое сравнение массивов (доступно в Java 9+)
+        int[] anotherArray = {1, 2, 3, 4, 9};
+        System.out.println("Сравнение массивов: " + Arrays.compare(numbers, anotherArray));
+    }
+}
+Результат выполнения:
+Массив: [5, 2, 9, 1, 3]
+Отсортированный массив: [1, 2, 3, 5, 9]
+Индекс элемента 9: 4
+Массивы равны: true
+Сравнение массивов: 1
