@@ -1,0 +1,6 @@
+public class UnicodeExample {
+    public static void main(String[] args) {
+        // Печать имени "Anna" с использованием Unicode символов
+        System.out.println("\u0041\u006E\u006E\u0061");
+    }
+}
