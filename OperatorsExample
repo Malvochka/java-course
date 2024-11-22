@@ -1,0 +1,127 @@
+Операторы присваивания (=, +=, -=, *=, /=, %=):
+public class OperatorsExample {
+    public static void main(String[] args) {
+        // Присваивание
+        int a = 10;
+        a += 5; // a = a + 5 -> a = 15
+        a -= 3; // a = a - 3 -> a = 12
+        a *= 2; // a = a * 2 -> a = 24
+        a /= 4; // a = a / 4 -> a = 6
+        a %= 3; // a = a % 3 -> a = 0
+        System.out.println("a = " + a); // Выведет a = 0
+        
+        // Конкатенация строк
+        String str = "Hello";
+        str += " World"; // str = "Hello" + " World" -> str = "Hello World"
+        System.out.println(str); // Выведет "Hello World"
+    }
+}
+
+Логические операторы (==, !=):
+public class LogicalOperatorsExample {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        
+        // Оператор сравнения ==
+        System.out.println(x == y); // false (5 != 10)
+        
+        // Оператор сравнения !=
+        System.out.println(x != y); // true (5 != 10)
+        
+        // Сравнение строк
+        String s1 = "Java";
+        String s2 = "Java";
+        System.out.println(s1 == s2); // true, потому что строки равны и ссылаются на один объект
+    }
+}
+Операторы логического сложения и И (||, &&):
+public class LogicalOperatorsExample {
+    public static void main(String[] args) {
+        boolean a = true;
+        boolean b = false;
+        
+        // Логическое ИЛИ
+        System.out.println(a || b); // true (так как a = true)
+        
+        // Логическое И
+        System.out.println(a && b); // false (так как b = false)
+    }
+}
+Побитовые операторы (|, ^, &):
+public class BitwiseOperatorsExample {
+    public static void main(String[] args) {
+        int a = 5; // 0101
+        int b = 3; // 0011
+        
+        // Побитовое ИЛИ (OR)
+        System.out.println(a | b); // 7 (0111)
+        
+        // Побитовое исключающее ИЛИ (XOR)
+        System.out.println(a ^ b); // 6 (0110)
+        
+        // Побитовое И (AND)
+        System.out.println(a & b); // 1 (0001)
+    }
+}
+Операторы сравнения (>, >=, <, <=):
+public class ComparisonOperatorsExample {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        
+        // Сравнение
+        System.out.println(a > b);  // false
+        System.out.println(a >= b); // false
+        System.out.println(a < b);  // true
+        System.out.println(a <= b); // true
+    }
+}
+Операторы сдвига (>>, >>>, <<):
+public class ShiftOperatorsExample {
+    public static void main(String[] args) {
+        int a = 16; // 10000 в двоичной системе
+        
+        // Сдвиг вправо
+        System.out.println(a >> 2); // 4 (10000 >> 2 = 000100)
+        
+        // Беззнаковый сдвиг вправо
+        System.out.println(a >>> 2); // 4 (без учета знака)
+        
+        // Сдвиг влево
+        System.out.println(a << 2); // 64 (10000 << 2 = 1000000)
+    }
+}
+Арифметические операторы (+, -, *, /, %):
+public class ArithmeticOperatorsExample {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+        
+        System.out.println(a + b); // 13
+        System.out.println(a - b); // 7
+        System.out.println(a * b); // 30
+        System.out.println(a / b); // 3 (целочисленное деление)
+        System.out.println(a % b); // 1 (остаток от деления)
+    }
+}
+Префиксная и постфиксная форма инкремента и декремента (++, --):
+public class IncrementDecrementExample {
+    public static void main(String[] args) {
+        int a = 5;
+        
+        // Постфиксный инкремент
+        System.out.println(a++); // 5 (сначала возвращает значение, затем увеличивает)
+        System.out.println(a);   // 6 (значение после инкремента)
+
+        // Префиксный инкремент
+        System.out.println(++a); // 7 (сначала увеличивает, затем возвращает значение)
+        
+        // Постфиксный декремент
+        System.out.println(a--); // 7 (сначала возвращает значение, затем уменьшает)
+        System.out.println(a);   // 6 (значение после декремента)
+        
+        // Префиксный декремент
+        System.out.println(--a); // 5 (сначала уменьшает, затем возвращает значение)
+    }
+}
