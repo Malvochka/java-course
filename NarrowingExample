@@ -1,0 +1,9 @@
+Примеры сужающего преобразования типов:
+
+public class NarrowingExample {
+    public static void main(String[] args) {
+        int i = 100;
+        byte b = (byte) i;  // Преобразование типа int в byte
+        System.out.println(b);  // Выведет 100
+    }
+}
