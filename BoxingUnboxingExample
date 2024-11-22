@@ -1,0 +1,12 @@
+public class BoxingUnboxingExample {
+    public static void main(String[] args) {
+        Integer i = null;
+        
+        // Попытка автораспаковки на null объекте вызовет исключение
+        try {
+            int j = i;  // Это вызовет NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка: " + e);
+        }
+    }
+}
