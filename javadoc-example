@@ -1,0 +1,46 @@
+/**
+ * Класс для демонстрации использования документации с помощью javadoc.
+ * Этот класс содержит методы для выполнения арифметических операций.
+ * 
+ * @author Иван Иванов
+ * @version 1.0
+ */
+public class Calculator {
+    
+    /**
+     * Сложение двух чисел.
+     *
+     * @param a первое число
+     * @param b второе число
+     * @return результат сложения a и b
+     */
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    /**
+     * Вычитание второго числа из первого.
+     *
+     * @param a первое число
+     * @param b второе число
+     * @return результат вычитания b из a
+     */
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    /**
+     * Деление двух чисел.
+     * 
+     * @param a делимое
+     * @param b делитель
+     * @return результат деления a на b
+     * @throws ArithmeticException если b равен 0
+     */
+    public double divide(int a, int b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException("Деление на ноль невозможно");
+        }
+        return (double) a / b;
+    }
+}
