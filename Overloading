@@ -1,0 +1,97 @@
+Перегрузка методов (Overloading)
+
+Код:
+class OverloadingExample {
+    // Метод без параметров
+    void display() {
+        System.out.println("Display without parameters");
+    }
+
+    // Перегруженный метод с одним параметром
+    void display(String message) {
+        System.out.println("Display with a message: " + message);
+    }
+
+    // Перегруженный метод с двумя параметрами
+    void display(String message, int number) {
+        System.out.println("Display with a message and number: " + message + ", " + number);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OverloadingExample obj = new OverloadingExample();
+        obj.display(); // Вызов метода без параметров
+        obj.display("Hello"); // Вызов метода с одним параметром
+        obj.display("Number is", 42); // Вызов метода с двумя параметрами
+    }
+}
+Вывод:
+Display without parameters
+Display with a message: Hello
+Display with a message and number: Number is, 42
+
+
+Переопределение методов (Overriding)
+
+Код:
+class Parent {
+    void greet() {
+        System.out.println("Hello from Parent");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void greet() {
+        System.out.println("Hello from Child");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent parent = new Parent();
+        parent.greet(); // Вызов метода из суперкласса
+
+        Child child = new Child();
+        child.greet(); // Вызов переопределенного метода
+
+        Parent ref = new Child();
+        ref.greet(); // Динамическое связывание (вызов метода подкласса)
+    }
+}
+Вывод:
+Hello from Parent
+Hello from Child
+Hello from Child
+
+
+Объединение перегрузки и переопределения
+class Parent {
+    void show(String message) {
+        System.out.println("Parent: " + message);
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show(String message) {
+        System.out.println("Child: " + message);
+    }
+
+    // Перегрузка метода show
+    void show(String message, int number) {
+        System.out.println("Child: " + message + " - " + number);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.show("Hello"); // Переопределение
+        child.show("Hello", 42); // Перегрузка
+    }
+}
+Вывод:
+Child: Hello
+Child: Hello - 42
