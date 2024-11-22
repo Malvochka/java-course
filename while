@@ -1,0 +1,12 @@
+Бесконечный цикл с while:
+
+while (true) {
+    System.out.println("This is an infinite while loop");
+    // Чтобы выйти, используйте break (опционально)
+}
+Бесконечный цикл с do-while:
+
+do {
+    System.out.println("This is an infinite do-while loop");
+    // Чтобы выйти, используйте break (опционально)
+} while (true);
