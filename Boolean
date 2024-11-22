@@ -1,0 +1,13 @@
+Использование статического метода valueOf(boolean b):
+Boolean bool1 = Boolean.valueOf(true);
+Boolean bool2 = Boolean.valueOf("TRUE");  // Сравнивает строку без учета регистра
+System.out.println("bool1: " + bool1);  // Выведет "bool1: true"
+System.out.println("bool2: " + bool2);  // Выведет "bool2: true"
+
+Использование конструктора Boolean(String s) 
+Boolean bool3 = new Boolean("false");
+System.out.println("bool3: " + bool3);  // Выведет "bool3: false"
+
+Использование строкового литерала:
+Boolean bool4 = Boolean.parseBoolean("TRUE");
+System.out.println("bool4: " + bool4);  // Выведет "bool4: true"
