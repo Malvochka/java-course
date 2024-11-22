@@ -1,0 +1,75 @@
+Переменная, используемая в switch, может быть следующих типов:
+
+Целочисленные типы:
+byte, short, int, char, и их классы-оболочки (Byte, Short, Integer, Character).
+
+Строковый тип (String):
+Добавлена поддержка в Java 7.
+
+Перечисления (enum):
+Позволяет использовать значения из перечислений.
+
+Объекты класса String или Character (оболочки):
+Является обертками для строк или символов.
+
+Примеры:
+
+public class SwitchExamples {
+    public static void main(String[] args) {
+        // Пример с int
+        int value = 1;
+        switch (value) {
+            case 1: 
+                System.out.println("Value is 1");
+                break;
+            case 2: 
+                System.out.println("Value is 2");
+                break;
+            default: 
+                System.out.println("Value is neither 1 nor 2");
+        }
+
+        // Пример с char
+        char letter = 'A';
+        switch (letter) {
+            case 'A':
+                System.out.println("Letter is A");
+                break;
+            case 'B':
+                System.out.println("Letter is B");
+                break;
+            default:
+                System.out.println("Letter is neither A nor B");
+        }
+
+        // Пример с String
+        String str = "hello";
+        switch (str) {
+            case "hello":
+                System.out.println("Greeting detected");
+                break;
+            case "bye":
+                System.out.println("Farewell detected");
+                break;
+            default:
+                System.out.println("Unknown string");
+        }
+
+        // Пример с enum
+        Day day = Day.MONDAY;
+        switch (day) {
+            case MONDAY:
+                System.out.println("Start of the week!");
+                break;
+            case FRIDAY:
+                System.out.println("End of the week!");
+                break;
+            default:
+                System.out.println("Middle of the week!");
+        }
+    }
+
+    enum Day {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+    }
+}
