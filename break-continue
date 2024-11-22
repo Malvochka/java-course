@@ -1,0 +1,44 @@
+Пример с break:
+Использование оператора break для выхода из цикла, когда обнаружено определенное условие.
+
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        System.out.println("Breaking the loop at i = " + i);
+        break; // выход из цикла
+    }
+    System.out.println("i = " + i);
+}
+
+Пример с continue:
+Использование continue для пропуска текущей итерации, когда выполняется определенное условие.
+
+for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        continue; // пропуск текущей итерации для четных чисел
+    }
+    System.out.println("i = " + i);
+}
+
+Пример использования цикла for для массивов и коллекций
+Пример с массивом:
+int[] numbers = {1, 2, 3, 4, 5};
+
+for (int number : numbers) {
+    System.out.printf("Number: %d%n", number);
+}
+
+Пример с коллекцией:
+import java.util.ArrayList;
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        for (String name : names) {
+            System.out.println("Name: " + name);
+        }
+    }
+}
