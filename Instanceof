@@ -1,0 +1,23 @@
+Пример с instanceof:
+public class InstanceofExample {
+    public static void main(String[] args) {
+        String str = "Hello, world!";
+        
+        // Проверяем, является ли str экземпляром класса String
+        System.out.println(str instanceof String); // true
+        
+        Object obj = new Object();
+        
+        // Проверяем, является ли obj экземпляром класса String
+        System.out.println(obj instanceof String); // false
+    }
+}
+Пример с null:
+public class InstanceofNullExample {
+    public static void main(String[] args) {
+        String str = null;
+        
+        // Проверяем, является ли null объектом String
+        System.out.println(str instanceof String); // false (null не является экземпляром String)
+    }
+}
