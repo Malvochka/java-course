@@ -1,0 +1,74 @@
+
+Файл 1: Parent.java
+package mypackage;
+
+public class Parent {
+    private String privateField = "Private";
+    String defaultField = "Default";
+    protected String protectedField = "Protected";
+    public String publicField = "Public";
+
+    public void demonstrateAccess() {
+        System.out.println(privateField); // Доступно внутри класса
+        System.out.println(defaultField); // Доступно внутри класса
+        System.out.println(protectedField); // Доступно внутри класса
+        System.out.println(publicField); // Доступно внутри класса
+    }
+}
+Файл 2: Child.java
+package mypackage;
+
+public class Child extends Parent {
+    public void demonstrateAccess() {
+        // System.out.println(privateField); // Ошибка: недоступно
+        System.out.println(defaultField); // Доступно: в том же пакете
+        System.out.println(protectedField); // Доступно: унаследовано
+        System.out.println(publicField); // Доступно
+    }
+}
+Файл 3: External.java
+package externalpackage;
+
+import mypackage.Parent;
+
+public class External {
+    public void demonstrateAccess() {
+        Parent parent = new Parent();
+        // System.out.println(parent.privateField); // Ошибка: недоступно
+        // System.out.println(parent.defaultField); // Ошибка: недоступно
+        // System.out.println(parent.protectedField); // Ошибка: недоступно
+        System.out.println(parent.publicField); // Доступно
+    }
+}
+
+когда спецификатор доступа не указан:
+Файл 1: DefaultAccess.java
+package mypackage;
+
+public class DefaultAccess {
+    String defaultField = "Default";
+
+    void demonstrateAccess() {
+        System.out.println(defaultField); // Доступно в том же классе
+    }
+}
+Файл 2: SamePackage.java
+package mypackage;
+
+public class SamePackage {
+    public void demonstrateAccess() {
+        DefaultAccess obj = new DefaultAccess();
+        System.out.println(obj.defaultField); // Доступно: в том же пакете
+    }
+}
+файл 3: DifferentPackage.java
+package externalpackage;
+
+import mypackage.DefaultAccess;
+
+public class DifferentPackage {
+    public void demonstrateAccess() {
+        DefaultAccess obj = new DefaultAccess();
+        // System.out.println(obj.defaultField); // Ошибка: недоступно в другом пакете
+    }
+}
