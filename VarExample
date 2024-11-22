@@ -1,0 +1,11 @@
+Пример с использованием var и интерфейсов:
+
+public class VarExample {
+    public static void main(String[] args) {
+        var number = 42;  // Тип переменной "number" будет автоматически выведен как int
+        System.out.println("number = " + number);
+        
+        var message = "Hello, world!";  // Тип переменной "message" будет String
+        System.out.println(message);
+    }
+}
