@@ -1,0 +1,15 @@
+public class DecodeExample {
+    public static void main(String[] args) {
+        // Декодирование строки с шестнадцатеричным значением
+        Integer hexValue = Integer.decode("0x1A");  // 0x1A - это 26 в десятичной системе
+        System.out.println("Hex value: " + hexValue); // Выведет "Hex value: 26"
+
+        // Декодирование строки с восьмеричным значением
+        Integer octalValue = Integer.decode("012");  // 012 - это 10 в десятичной системе
+        System.out.println("Octal value: " + octalValue); // Выведет "Octal value: 10"
+
+        // Декодирование строки с десятичным значением
+        Integer decimalValue = Integer.decode("100");  // 100 в десятичной системе
+        System.out.println("Decimal value: " + decimalValue); // Выведет "Decimal value: 100"
+    }
+}
