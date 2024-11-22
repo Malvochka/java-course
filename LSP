@@ -1,1 +1,60 @@
+// Базовый класс Vehicle
+class Vehicle {
+    public void startEngine() {
+        System.out.println("Двигатель запущен");
+    }
+
+    public void move() {
+        System.out.println("Транспортное средство движется");
+    }
+}
+
+// Класс Car наследует Vehicle
+class Car extends Vehicle {
+    @Override
+    public void startEngine() {
+        System.out.println("Двигатель автомобиля запущен");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Автомобиль едет по дороге");
+    }
+}
+
+// Класс Bicycle наследует Vehicle
+class Bicycle extends Vehicle {
+    @Override
+    public void startEngine() {
+        throw new UnsupportedOperationException("Велосипед не имеет двигателя");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Велосипед движется по дороге, крутя педали");
+    }
+}
+
+// Основной класс для тестирования
+public class Main {
+    public static void testVehicle(Vehicle vehicle) {
+        try {
+            vehicle.startEngine();
+        } catch (UnsupportedOperationException e) {
+            System.out.println(e.getMessage());
+        }
+        vehicle.move();
+    }
+
+    public static void main(String[] args) {
+        Vehicle car = new Car();
+        Vehicle bicycle = new Bicycle();
+
+        System.out.println("Тестируем автомобиль:");
+        testVehicle(car);
+
+        System.out.println("\nТестируем велосипед:");
+        testVehicle(bicycle);
+    }
+}
 
