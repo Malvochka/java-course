@@ -1,0 +1,29 @@
+public class EnumExample {
+
+    public enum Day {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+
+    public static void main(String[] args) {
+        Day today = Day.FRIDAY; // Инициализация элемента перечисления
+
+        switch (today) {
+            case MONDAY:
+                System.out.println("Начало рабочей недели.");
+                break;
+            case FRIDAY:
+                System.out.println("Пятница! Выходные близко.");
+                break;
+            case SATURDAY:
+            case SUNDAY:
+                System.out.println("Ура, выходные!");
+                break;
+            default:
+                System.out.println("Рабочий день.");
+        }
+    }
+}
+
+Вывод программы:
+plaintext
+Пятница! Выходные близко.
