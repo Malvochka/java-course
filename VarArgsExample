@@ -1,0 +1,59 @@
+public class VarArgsExample {
+
+    // Метод с переменным числом параметров для чисел
+    public void printDetails(int... numbers) {
+        System.out.println("Printing numbers:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+
+    // Перегруженный метод с переменным числом параметров для строк
+    public void printDetails(String... strings) {
+        System.out.println("Printing strings:");
+        for (String str : strings) {
+            System.out.println(str);
+        }
+    }
+
+    // Перегруженный метод с фиксированным и переменным числом параметров
+    public void printDetails(String message, int... numbers) {
+        System.out.println("Message: " + message);
+        System.out.println("Numbers:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+
+    public static void main(String[] args) {
+        VarArgsExample example = new VarArgsExample();
+
+        // Вызов метода для чисел
+        example.printDetails(1, 2, 3, 4, 5);
+
+        // Вызов метода для строк
+        example.printDetails("Hello", "World", "Java");
+
+        // Вызов метода с сообщением и числами
+        example.printDetails("Here are the numbers:", 10, 20, 30);
+    }
+}
+
+Вывод программы:
+plaintext
+Копировать код
+Printing numbers:
+1
+2
+3
+4
+5
+Printing strings:
+Hello
+World
+Java
+Message: Here are the numbers:
+Numbers:
+10
+20
+30
