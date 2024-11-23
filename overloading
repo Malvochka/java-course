@@ -1,0 +1,25 @@
+class Calculator {
+    // Метод для сложения двух целых чисел
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Метод для сложения трех целых чисел
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Метод для сложения двух чисел с плавающей точкой
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(2, 3));         // Вызов первого метода
+        System.out.println(calc.add(2, 3, 4));      // Вызов второго метода
+        System.out.println(calc.add(2.5, 3.5));     // Вызов третьего метода
+    }
+}
