@@ -1,0 +1,40 @@
+public class CustomEnumExample {
+
+    public enum Season {
+        WINTER("Cold and snowy"),
+        SPRING("Flowers bloom"),
+        SUMMER("Hot and sunny"),
+        FALL("Leaves fall");
+
+        private final String description;
+
+        // Конструктор для перечисления
+        Season(String description) {
+            this.description = description;
+        }
+
+        // Дополнительный метод
+        public String getDescription() {
+            return description;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Перебор всех элементов перечисления
+        for (Season season : Season.values()) {
+            System.out.printf("%s: %s%n", season, season.getDescription());
+        }
+
+        // Пример использования конкретного значения
+        Season currentSeason = Season.SUMMER;
+        System.out.println("Current season: " + currentSeason.getDescription());
+    }
+}
+
+Вывод программы:
+
+WINTER: Cold and snowy
+SPRING: Flowers bloom
+SUMMER: Hot and sunny
+FALL: Leaves fall
+Current season: Hot and sunny
