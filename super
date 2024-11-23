@@ -1,0 +1,45 @@
+class A {
+    int a = 10;
+
+    A() {
+        System.out.println("Constructor of class A");
+    }
+
+    void method() {
+        System.out.println("Method of class A");
+    }
+}
+
+class B extends A {
+    int a = 20;
+
+    B() {
+        super(); // Обращение к конструктору суперкласса
+        System.out.println("Constructor of class B");
+    }
+
+    void method() {
+        super.method(); // Обращение к методу суперкласса
+        System.out.println("Method of class B");
+    }
+
+    void printSuperField() {
+        System.out.println("Field 'a' in superclass A: " + super.a); // Доступ к полю суперкласса
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        b.method();
+        b.printSuperField();
+    }
+}
+
+вывод: 
+Constructor of class A
+Constructor of class B
+Method of class A
+Method of class B
+Field 'a' in superclass A: 10
+
