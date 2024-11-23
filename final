@@ -1,0 +1,19 @@
+class Parent {
+    public final void displayMessage() {
+        System.out.println("This is a final method in the Parent class.");
+    }
+}
+
+class Child extends Parent {
+    // Ошибка компиляции: final метод нельзя переопределить
+    // public void displayMessage() {
+    //     System.out.println("Attempting to override a final method in the Child class.");
+    // }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.displayMessage(); // Вызов метода из суперкласса
+    }
+}
