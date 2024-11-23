@@ -1,0 +1,52 @@
+Пример использования <? extends T>
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Animal {
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void feedAnimals(List<? extends Animal> animals) {
+        for (Animal animal : animals) {
+            animal.eat();
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+
+        // Используем метод feedAnimals с <? extends Animal>
+        feedAnimals(dogs); // Компилируется, так как Dog является наследником Animal
+    }
+}
+
+Пример использования <? super T>
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void addNumbers(List<? super Integer> list) {
+        list.add(10);
+        list.add(20);
+    }
+
+    public static void main(String[] args) {
+        List<Number> numbers = new ArrayList<>();
+        addNumbers(numbers); // Компилируется, так как Number является супертипом Integer
+
+        System.out.println(numbers);
+    }
+}
