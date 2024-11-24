@@ -1,0 +1,47 @@
+public class OuterClass {
+    private class PrivateInner {
+        public void print() {
+            System.out.println("Private Inner Class");
+        }
+    }
+
+    class DefaultInner {
+        public void print() {
+            System.out.println("Default Inner Class");
+        }
+    }
+
+    protected class ProtectedInner {
+        public void print() {
+            System.out.println("Protected Inner Class");
+        }
+    }
+
+    public class PublicInner {
+        public void print() {
+            System.out.println("Public Inner Class");
+        }
+    }
+
+    public void testAccess() {
+        new PrivateInner().print();   
+        new DefaultInner().print();  
+        new ProtectedInner().print();
+        new PublicInner().print();  
+    }
+}
+
+public class TestAccess {
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+
+        // new OuterClass.PrivateInner(); // Ошибка: private недоступен из другого класса
+        // new OuterClass.DefaultInner(); // Ошибка: default недоступен вне пакета
+
+        OuterClass.ProtectedInner protectedInner = outer.new ProtectedInner();
+        protectedInner.print(); // Доступ к protected-классу внутри пакета/подкласса
+
+        OuterClass.PublicInner publicInner = outer.new PublicInner();
+        publicInner.print(); // Доступ к public-классу
+    }
+}
