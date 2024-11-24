@@ -1,0 +1,68 @@
+ArithmeticException
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // Деление на ноль
+        } catch (ArithmeticException e) {
+            System.out.println("Ошибка: Деление на ноль");
+        }
+    }
+}
+Описание: Исключение ArithmeticException возникает при попытке выполнить недопустимую арифметическую операцию, например, деление на ноль.
+
+2. ArrayIndexOutOfBoundsException
+public class ArrayIndexOutOfBoundsExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[5];
+            arr[10] = 100; // Попытка обращения к несуществующему элементу
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Ошибка: Индекс за пределами массива");
+        }
+    }
+}
+Описание: Исключение ArrayIndexOutOfBoundsException возникает, если пытаемся обратиться к индексу массива, который находится вне его границ.
+
+3. IllegalArgumentException
+public class IllegalArgumentExceptionExample {
+    public static void main(String[] args) {
+        try {
+            setAge(-5); // Недопустимое значение возраста
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: Неверный аргумент");
+        }
+    }
+
+    public static void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Возраст не может быть отрицательным");
+        }
+    }
+}
+Описание: Исключение IllegalArgumentException выбрасывается, когда метод получает недопустимый аргумент.
+
+4. ClassCastException
+public class ClassCastExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Object obj = "Hello, World!";
+            Integer num = (Integer) obj; // Неверное приведение типов
+        } catch (ClassCastException e) {
+            System.out.println("Ошибка: Неверное приведение типов");
+        }
+    }
+}
+Описание: Исключение ClassCastException возникает, когда выполняется некорректное приведение объекта к неподходящему типу.
+
+5. NullPointerException
+public class NullPointerExceptionExample {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            System.out.println(str.length()); // Попытка обращения к методу на null
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка: Нулевой указатель");
+        }
+    }
+}
+Описание: Исключение NullPointerException возникает, когда пытаемся вызвать метод или обратиться к полю объекта, который равен null.
