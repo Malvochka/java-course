@@ -1,0 +1,35 @@
+interface MyInterface {
+    // Неабстрактный метод
+    default void defaultMethod() {
+        System.out.println("Default method in interface");
+    }
+
+    // Статический метод
+    static void staticMethod() {
+        System.out.println("Static method in interface");
+    }
+}
+
+class MyClass implements MyInterface {
+    // Переопределение неабстрактного метода (опционально)
+    @Override
+    public void defaultMethod() {
+        System.out.println("Overridden default method in class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+
+        // Вызов переопределенного default-метода
+        myClass.defaultMethod();
+
+        // Вызов статического метода интерфейса
+        MyInterface.staticMethod();
+    }
+}
+
+вывод программы: Overridden default method in class
+Static method in interface
+
