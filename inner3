@@ -1,0 +1,36 @@
+Внешний класс может получить доступ к полям и методам внутреннего класса, но доступ зависит от спецификаторов доступа внутреннего класса.
+
+public class OuterClass {
+    public class InnerClass {
+        private String privateField = "Inner Private Field";
+
+        public void printPrivateField() {
+            System.out.println(privateField);
+        }
+    }
+
+    private class PrivateInnerClass {
+        public String data = "Private Inner Data";
+    }
+
+    public void testAccess() {
+        InnerClass inner = new InnerClass();
+        System.out.println(inner.privateField); // Доступ к private-полю внутреннего класса
+        inner.printPrivateField(); // Вызов метода внутреннего класса
+
+        PrivateInnerClass privateInner = new PrivateInnerClass();
+        System.out.println(privateInner.data); // Доступ к private внутреннему классу
+    }
+}
+
+public class TestAccess {
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.testAccess();
+
+        OuterClass.InnerClass inner = outer.new InnerClass();
+        inner.printPrivateField(); // Публичный метод доступен
+
+        // new OuterClass.PrivateInnerClass(); // Ошибка: private недоступен вне OuterClass
+    }
+}
