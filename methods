@@ -1,0 +1,47 @@
+public class StringMethodsDemo {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        
+        // 1. length(): Возвращает длину строки
+        System.out.println("1. Length: " + str.length());
+
+        // 2. charAt(): Возвращает символ по указанному индексу
+        System.out.println("2. Character at index 7: " + str.charAt(7));
+
+        // 3. substring(): Извлекает подстроку
+        System.out.println("3. Substring (7-12): " + str.substring(7, 12));
+
+        // 4. contains(): Проверяет, содержит ли строка указанную последовательность
+        System.out.println("4. Contains 'World': " + str.contains("World"));
+
+        // 5. toUpperCase(): Преобразует строку в верхний регистр
+        System.out.println("5. Uppercase: " + str.toUpperCase());
+
+        // 6. toLowerCase(): Преобразует строку в нижний регистр
+        System.out.println("6. Lowercase: " + str.toLowerCase());
+
+        // 7. startsWith(): Проверяет, начинается ли строка с определенной подстроки
+        System.out.println("7. Starts with 'Hello': " + str.startsWith("Hello"));
+
+        // 8. endsWith(): Проверяет, заканчивается ли строка на определенную подстроку
+        System.out.println("8. Ends with '!': " + str.endsWith("!"));
+
+        // 9. replace(): Заменяет все вхождения одной подстроки на другую
+        System.out.println("9. Replace 'World' with 'Java': " + str.replace("World", "Java"));
+
+        // 10. trim(): Убирает ведущие и завершающие пробелы
+        String padded = "   Hello   ";
+        System.out.println("10. Trimmed string: '" + padded.trim() + "'");
+    }
+}
+
+Вывод: 1. Length: 13
+2. Character at index 7: W
+3. Substring (7-12): World
+4. Contains 'World': true
+5. Uppercase: HELLO, WORLD!
+6. Lowercase: hello, world!
+7. Starts with 'Hello': true
+8. Ends with '!': true
+9. Replace 'World' with 'Java': Hello, Java!
+10. Trimmed string: 'Hello'
