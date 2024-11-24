@@ -1,0 +1,52 @@
+
+1. @Override
+Аннотация @Override указывает, что метод переопределяет метод суперкласса. Она используется для:
+1)Проверки корректности переопределения. Если метод суперкласса не существует или имеет неподходящую сигнатуру, компилятор выдаст ошибку.
+2)Улучшения читаемости кода.
+Пример:
+class Parent {
+    public void display() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public void display() {
+        System.out.println("Child method");
+    }
+}
+
+2. @Deprecated
+Аннотация @Deprecated используется для обозначения устаревших элементов кода. Компилятор выдаст предупреждение, если такой элемент используется.
+Пример:
+class Example {
+    @Deprecated
+    public void oldMethod() {
+        System.out.println("This method is deprecated.");
+    }
+    
+    public void newMethod() {
+        System.out.println("Use this method instead.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example example = new Example();
+        example.oldMethod(); // Выдаст предупреждение
+    }
+}
+
+3. @SuppressWarnings
+Аннотация @SuppressWarnings подавляет указанные компилятором предупреждения. Используется для предотвращения ненужных или ложных предупреждений.
+Пример:
+import java.util.ArrayList;
+
+public class SuppressExample {
+    @SuppressWarnings("unchecked")
+    public void uncheckedWarningExample() {
+        ArrayList list = new ArrayList(); // Предупреждение о необобщенном типе подавлено
+        list.add("Test");
+    }
+}
