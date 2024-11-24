@@ -1,0 +1,44 @@
+Метод equals в Java должен следовать следующим соглашениям:
+Рефлексивность: Для любого объекта x, x.equals(x) должно возвращать true.
+Симметричность: Для любых объектов x и y, если x.equals(y) возвращает true, то y.equals(x) должно тоже возвращать true.
+Транзитивность: Для любых объектов x, y, и z, если x.equals(y) и y.equals(z) возвращают true, то x.equals(z) также должно возвращать true.
+Согласованность: Если x.equals(y) возвращает true, то оно всегда будет возвращать true, если объекты не изменялись.
+Сравнение с null: Для любого объекта x, x.equals(null) должно возвращать false.
+
+
+Пример переопределения equals
+
+public class Person {
+    private String name;
+    private int age;
+
+    // Конструктор
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Переопределение equals
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Проверка на идентичность объектов
+        if (obj == null || getClass() != obj.getClass()) return false; // Проверка на null и совпадение классов
+        Person person = (Person) obj;
+        return age == person.age && name.equals(person.name); // Сравнение по полям
+    }
+
+    // Переопределение hashCode для согласованности
+    @Override
+    public int hashCode() {
+        return name.hashCode() + Integer.hashCode(age);
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person("Alice", 30);
+        Person p2 = new Person("Alice", 30);
+        Person p3 = new Person("Bob", 25);
+
+        System.out.println(p1.equals(p2)); // true
+        System.out.println(p1.equals(p3)); // false
+    }
+}
