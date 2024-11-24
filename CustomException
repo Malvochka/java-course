@@ -1,0 +1,13 @@
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            // Генерация собственного исключения
+            throw new MyFirstException("Это моё собственное исключение");
+        } catch (MyFirstException e) {
+            System.out.println("Поймано исключение: " + e.getMessage());
+        }
+    }
+}
+
+Вывод: 
+Поймано исключение: Это моё собственное исключение
