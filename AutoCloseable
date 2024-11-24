@@ -1,0 +1,19 @@
+Интерфейс AutoCloseable был введён в Java 7 и используется для упрощения работы с ресурсами, требующими закрытия (например, потоки ввода-вывода, файлы). Он позволяет автоматически закрывать ресурсы, используя конструкцию try-with-resources.
+
+Пример использования AutoCloseable:
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class AutoCloseableExample {
+    public static void main(String[] args) {
+        try (FileInputStream inputStream = new FileInputStream("example.txt")) {
+            int byteData;
+            while ((byteData = inputStream.read()) != -1) {
+                System.out.print((char) byteData);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
