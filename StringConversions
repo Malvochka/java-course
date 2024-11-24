@@ -1,0 +1,39 @@
+public class StringConversions {
+    public static void main(String[] args) {
+        // Преобразование String в StringBuffer
+        String str = "Hello";
+        StringBuffer sbf = new StringBuffer(str);
+        System.out.println("StringBuffer from String: " + sbf);
+
+        // Преобразование StringBuffer в String
+        String strFromBuffer = sbf.toString();
+        System.out.println("String from StringBuffer: " + strFromBuffer);
+
+        // Преобразование String в StringBuilder
+        StringBuilder sbd = new StringBuilder(str);
+        System.out.println("StringBuilder from String: " + sbd);
+
+        // Преобразование StringBuilder в String
+        String strFromBuilder = sbd.toString();
+        System.out.println("String from StringBuilder: " + strFromBuilder);
+
+        // Преобразование StringBuffer в StringBuilder
+        StringBuilder sbdFromBuffer = new StringBuilder(sbf);
+        System.out.println("StringBuilder from StringBuffer: " + sbdFromBuffer);
+
+        // Преобразование StringBuilder в StringBuffer
+        StringBuffer sbfFromBuilder = new StringBuffer(sbd);
+        System.out.println("StringBuffer from StringBuilder: " + sbfFromBuilder);
+    }
+}
+
+Вывод: StringBuffer from String: Hello
+String from StringBuffer: Hello
+StringBuilder from String: Hello
+String from StringBuilder: Hello
+StringBuilder from StringBuffer: Hello
+StringBuffer from StringBuilder: Hello
+
+пояснение: String -> StringBuffer и String -> StringBuilder: Создаются с помощью конструктора StringBuffer(String) и StringBuilder(String).
+StringBuffer -> String и StringBuilder -> String: Выполняется через метод toString().
+StringBuffer -> StringBuilder и StringBuilder -> StringBuffer: Выполняется с помощью конструкторов StringBuilder(StringBuffer) и StringBuffer(StringBuilder).
