@@ -1,0 +1,22 @@
+public class ExceptionHandlingExample {
+
+    public static void main(String[] args) {
+        try {
+            // Генерация первого исключения, которое будет перехвачено
+            int result = 10 / 0;  // Деление на ноль (ArithmeticException)
+            
+            // Генерация второго исключения, которое не будет перехвачено
+            String str = null;
+            System.out.println(str.length());  // NullPointerException (не перехвачено)
+            
+        } catch (ArithmeticException e) {
+            System.out.println("Ошибка: Деление на ноль - перехвачено");
+        }
+        
+        System.out.println("Программа завершена.");
+    }
+}
+
+вывод: Ошибка: Деление на ноль - перехвачено
+Exception in thread "main" java.lang.NullPointerException
+    at ExceptionHandlingExample.main(ExceptionHandlingExample.java:14)
