@@ -1,0 +1,30 @@
+import java.util.Formatter;
+import java.util.Date;
+
+public class DateFormatterExample {
+    public static void main(String[] args) {
+        Formatter formatter = new Formatter();
+
+        // Получение текущей даты и времени
+        Date currentDate = new Date();
+
+        // Форматирование даты и времени с использованием различных спецификаторов
+        formatter.format("Current Hour (24-hour format): %tH%n", currentDate);    // %tH - Час (00-23)
+        formatter.format("Current Hour (12-hour format): %tI%n", currentDate);   // %tI - Час (1-12)
+        formatter.format("Current Minute: %tM%n", currentDate);              // %tM - Минуты
+        formatter.format("Current Second: %tS%n", currentDate);                 // %tS - Секунды
+        formatter.format("Current Year: %tY%n", currentDate);               // %tY - Год (четырехзначный)
+
+        // Выводим результат
+        System.out.println(formatter.toString());
+
+        // Закрытие Formatter
+        formatter.close();
+    }
+}
+
+вывод: Current Hour (24-hour format): 15
+Current Hour (12-hour format): 03
+Current Minute: 42
+Current Second: 25
+Current Year: 2024
