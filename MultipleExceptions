@@ -1,0 +1,33 @@
+public class MultipleExceptionsExample {
+    public static void main(String[] args) {
+        try {
+            // Генерация нескольких исключений
+            String str = null;
+            System.out.println(str.length());  // NullPointerException
+
+            int result = 10 / 0;  // ArithmeticException
+
+            // Генерация исключений из иерархии
+            throw new Ex3();  // Ex3 - подкласс Ex2, а Ex2 - подкласс Ex1
+            
+        } catch (ArithmeticException | NullPointerException e) {
+            // Обработка двух исключений одинаково
+            System.out.println("Обработка исключения: " + e.getClass().getSimpleName());
+        } catch (Ex1 e) {
+            // Обработка исключений из иерархии
+            System.out.println("Обработка исключения иерархии: " + e.getClass().getSimpleName());
+        } catch (Exception e) {
+            System.out.println("Общее исключение: " + e.getClass().getSimpleName());
+        }
+    }
+}
+
+// Пример исключений в иерархии
+class Ex1 extends Exception {}
+class Ex2 extends Ex1 {}
+class Ex3 extends Ex2 {}
+
+вывод: Обработка исключения: NullPointerException
+Обработка исключения: ArithmeticException
+Обработка исключения иерархии: Ex3
+
