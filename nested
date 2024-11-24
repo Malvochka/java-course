@@ -1,0 +1,30 @@
+Код:
+
+public interface OuterInterface {
+
+    // Вложенный класс
+    class NestedClass {
+        public void func() {
+            System.out.println("Method of Nested Class inside Interface");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Создание экземпляра вложенного класса
+        OuterInterface.NestedClass nested = new OuterInterface.NestedClass();
+        nested.func(); // Вызов метода вложенного класса
+    }
+}
+Вывод:
+Method of Nested Class inside Interface
+
+
+Вложенные классы в интерфейсах:
+Класс, вложенный в интерфейс, является неявно static, даже если ключевое слово static не указано.
+Он не зависит от экземпляра какого-либо внешнего класса.
+
+Использование вложенного класса:
+Создается экземпляр вложенного класса, используя синтаксис OuterInterface.NestedClass.
+Такой класс можно использовать без реализации самого интерфейса, что делает его удобным для вспомогательных задач.
