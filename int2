@@ -1,0 +1,37 @@
+Если два интерфейса содержат одинаковые неабстрактные методы, реализующий класс обязан переопределить метод, чтобы разрешить конфликт. Без явного переопределения компилятор выдаст ошибку.
+
+Пример:
+interface InterfaceA {
+    default void show() {
+        System.out.println("Default method from InterfaceA");
+    }
+}
+
+interface InterfaceB {
+    default void show() {
+        System.out.println("Default method from InterfaceB");
+    }
+}
+
+class MyClass implements InterfaceA, InterfaceB {
+    // Обязательно переопределяем метод, чтобы разрешить конфликт
+    @Override
+    public void show() {
+        // Можно выбрать, какой метод использовать, или реализовать свой
+        InterfaceA.super.show(); // Вызов метода InterfaceA
+        InterfaceB.super.show(); // Вызов метода InterfaceB
+        System.out.println("Custom implementation in class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        myClass.show();
+    }
+}
+
+Вывод :
+Default method from InterfaceA
+Default method from InterfaceB
+Custom implementation in class
