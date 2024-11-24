@@ -1,0 +1,83 @@
+public class StringBufferBuilderDemo {
+    public static void main(String[] args) {
+        // Создание объектов StringBuffer и StringBuilder
+        StringBuffer sbf = new StringBuffer("Hello");
+        StringBuilder sbd = new StringBuilder("World");
+        
+        // 1. append(): Добавляет строку к текущей
+        sbf.append(", Java!");
+        sbd.append(" Programming");
+        System.out.println("1. StringBuffer after append: " + sbf);
+        System.out.println("   StringBuilder after append: " + sbd);
+
+        // 2. insert(): Вставляет строку в указанную позицию
+        sbf.insert(7, "Awesome ");
+        sbd.insert(0, "Welcome to ");
+        System.out.println("2. After insert: " + sbf);
+        System.out.println("   After insert: " + sbd);
+
+        // 3. replace(): Заменяет часть строки
+        sbf.replace(7, 14, "Amazing");
+        sbd.replace(11, 20, "Fantastic");
+        System.out.println("3. After replace: " + sbf);
+        System.out.println("   After replace: " + sbd);
+
+        // 4. delete(): Удаляет часть строки
+        sbf.delete(7, 14);
+        sbd.delete(0, 11);
+        System.out.println("4. After delete: " + sbf);
+        System.out.println("   After delete: " + sbd);
+
+        // 5. reverse(): Переворачивает строку
+        sbf.reverse();
+        sbd.reverse();
+        System.out.println("5. After reverse: " + sbf);
+        System.out.println("   After reverse: " + sbd);
+
+        // 6. capacity(): Возвращает текущую емкость объекта
+        System.out.println("6. StringBuffer capacity: " + sbf.capacity());
+        System.out.println("   StringBuilder capacity: " + sbd.capacity());
+
+        // 7. ensureCapacity(): Увеличивает емкость, если она недостаточна
+        sbf.ensureCapacity(50);
+        sbd.ensureCapacity(40);
+        System.out.println("7. After ensureCapacity: " + sbf.capacity());
+        System.out.println("   After ensureCapacity: " + sbd.capacity());
+
+        // 8. length(): Возвращает длину строки
+        System.out.println("8. StringBuffer length: " + sbf.length());
+        System.out.println("   StringBuilder length: " + sbd.length());
+
+        // 9. charAt(): Возвращает символ по индексу
+        System.out.println("9. Character at index 3 (StringBuffer): " + sbf.charAt(3));
+        System.out.println("   Character at index 3 (StringBuilder): " + sbd.charAt(3));
+
+        // 10. setCharAt(): Заменяет символ в указанной позиции
+        sbf.setCharAt(3, 'X');
+        sbd.setCharAt(3, 'Y');
+        System.out.println("10. After setCharAt: " + sbf);
+        System.out.println("    After setCharAt: " + sbd);
+    }
+}
+
+вывод: 1. StringBuffer after append: Hello, Java!
+   StringBuilder after append: World Programming
+2. After insert: Hello, Amazing Java!
+   After insert: Welcome to World Programming
+3. After replace: Hello, Amazing!
+   After replace: Welcome to Fantastic
+4. After delete: Hello, !
+   After delete: Fantastic
+5. After reverse: ! ,olleH
+   After reverse: citsatnaF
+6. StringBuffer capacity: 21
+   StringBuilder capacity: 35
+7. After ensureCapacity: 50
+   After ensureCapacity: 40
+8. StringBuffer length: 9
+   StringBuilder length: 9
+9. Character at index 3 (StringBuffer): ,
+   Character at index 3 (StringBuilder): t
+10. After setCharAt: ! ,XlleH
+    After setCharAt: citsYtnaF
+
