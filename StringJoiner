@@ -1,0 +1,27 @@
+import java.util.StringJoiner;
+
+public class StringJoinerDemo {
+    public static void main(String[] args) {
+        // Создаем StringJoiner с разделителем ", " и обрамлением квадратными скобками
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        
+        // Добавляем элементы
+        joiner.add("Apple");
+        joiner.add("Banana");
+        joiner.add("Cherry");
+        
+        // Вывод объединенной строки
+        System.out.println("Joined string: " + joiner);
+
+        // Использование без префикса и суффикса
+        StringJoiner joinerSimple = new StringJoiner(" | ");
+        joinerSimple.add("Red");
+        joinerSimple.add("Green");
+        joinerSimple.add("Blue");
+        System.out.println("Simple joiner: " + joinerSimple);
+    }
+}
+
+Вывод: 
+Joined string: [Apple, Banana, Cherry]
+Simple joiner: Red | Green | Blue
