@@ -1,0 +1,35 @@
+import java.util.Formatter;
+
+public class FormatterExample {
+    public static void main(String[] args) {
+        Formatter formatter = new Formatter();
+
+        // Пример использования различных спецификаторов
+        boolean boolValue = true;
+        char charValue = 'A';
+        int intValue = 123;
+        double doubleValue = 456.789;
+        String strValue = "Hello, World!";
+
+        // Форматирование с помощью спецификаторов
+        formatter.format("Boolean value: %b%n", boolValue);  // %b - Логическое значение
+        formatter.format("Character: %c%n", charValue);      // %c - Символ
+        formatter.format("Integer value: %d%n", intValue);   // %d - Целое число
+        formatter.format("Floating-point value: %.2f%n", doubleValue);  // %f - Число с плавающей точкой
+        formatter.format("String value: %s%n", strValue);    // %s - Строка
+
+        // Выводим результат
+        System.out.println(formatter.toString());
+        
+        // Закрытие Formatter
+        formatter.close();
+    }
+}
+
+вывод: Boolean value: true
+Character: A
+Integer value: 123
+Floating-point value: 456.79
+String value: Hello, World!
+
+
