@@ -1,0 +1,41 @@
+Внутренний класс имеет доступ ко всем полям и методам внешнего класса, включая private.
+
+public class OuterClass {
+    private String privateField = "Private Field";
+
+    public String publicField = "Public Field";
+
+    private void privateMethod() {
+        System.out.println("Private Method of OuterClass");
+    }
+
+    public void publicMethod() {
+        System.out.println("Public Method of OuterClass");
+    }
+
+    public class InnerClass {
+        public void accessOuter() {
+            System.out.println("Accessing: " + privateField); // Доступ к private-полю
+            privateMethod(); // Вызов private-метода
+            System.out.println("Accessing: " + publicField); // Доступ к public-полю
+            publicMethod(); // Вызов public-метода
+        }
+    }
+
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        InnerClass inner = outer.new InnerClass();
+        inner.accessOuter();
+    }
+}
+Вывод:
+
+Accessing: Private Field
+Private Method of OuterClass
+Accessing: Public Field
+Public Method of OuterClass
+
+
+Зависимость доступа от спецификаторов:
+Внутренний класс всегда имеет доступ ко всем полям и методам внешнего класса, независимо от их спецификаторов доступа.
+
