@@ -1,0 +1,23 @@
+Пример:
+
+class Parent {
+    void showMessage() {
+        System.out.println("Message from Parent");
+    }
+}
+
+class Child extends Parent {
+    // Ошибка: метод больше не переопределяет метод суперкласса из-за опечатки в имени
+    @Override
+    void showmessage() { // Ошибка компиляции: метод showMessage() не найден в Parent
+        System.out.println("Message from Child");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent parent = new Child();
+        parent.showMessage();
+    }
+}
+Преимущество @Override: Если убрать @Override, программа будет компилироваться, но метод showmessage() будет восприниматься как новый метод, а не переопределенный. Использование аннотации помогает предотвратить такие ошибки.
